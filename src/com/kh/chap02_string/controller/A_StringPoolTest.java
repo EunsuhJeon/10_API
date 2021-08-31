@@ -23,22 +23,39 @@ public class A_StringPoolTest {
 		// 정말 정말 정말 주소값에 대해서 알고 싶다면 System.identityHashCode(레퍼런스)
 		System.out.println(System.identityHashCode(str1));
 		System.out.println(System.identityHashCode(str2));
+
+	}
+	
+	public void method2() {
 		
+		String str = new String("hello");
 		
+		// 2. 문자열을 리터럴 값으로 생성
+		String str1 = "hello";
+		String str2 = "hello";
 		
+		System.out.println(str1);
+		System.out.println(str2);
 		
+		System.out.println(str1.hashCode());
+		System.out.println(str2.hashCode());
 		
+		System.out.println(str1 == str2);
 		
+		System.out.println(System.identityHashCode(str1));
+		System.out.println(System.identityHashCode(str2));
+		System.out.println(System.identityHashCode(str));
 		
+		String str3 = "hi";
 		
+		// String클래스 == 불변클래스(변하지 않는 클래스)
+		// 변경이 가능하긴 하나 그 자리에서 수정되는 개념이 아님!
+		str3 = "bye";
+		System.out.println(System.identityHashCode(str3));
+		// 변경하는 순간 기존의 문자열 자리에서 변경되는 것이 아닌
+		// 새로운 곳을 참조하도록 됨 (새로운 주소값 부여받음 == 주소값 변경)
 		
-		
-		
-		
-		
-		
-		
-		
+		str3 = "hello";
 	}
 
 }
